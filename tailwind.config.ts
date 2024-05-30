@@ -26,6 +26,7 @@ module.exports = {
       },
       backgroundImage: {
         'pattern': "url('/pattern.png')",
+        'curves' : "url('/curves.png')"
       }
     },
   },
