@@ -1,9 +1,10 @@
 import "./globals.css";
 
 import { Navbar, Footer } from "@/components";
+import Header from "@/components/Layouts/Header";
 export const metadata = {
-  title: "Car Hub",
-  description: "Discover world's best car showcase application",
+  title: "Movie Town",
+  description: "Discover world's best movies",
 };
 
 export default function RootLayout({
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative">
-        <Navbar />
+        <Header />
         {children}
         <Footer />
       </body>

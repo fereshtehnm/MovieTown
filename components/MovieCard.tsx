@@ -4,13 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { MovieProps } from "@/types";
 import CustomButton from "./CustomButton";
-import { calculateCarRent } from "@/utils";
-import CarDetails from "./CarDetails";
+import MovieDetails from "./MovieDetails";
 
 interface MovieCardProps {
   movie: MovieProps;
 }
-const CarCard = ({ movie }: MovieCardProps) => {
+const MovieCard = ({ movie }: MovieCardProps) => {
   const { title, poster, year } = movie;
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -57,13 +56,13 @@ const CarCard = ({ movie }: MovieCardProps) => {
           </div>
         </div>
       </div>
-      <CarDetails
+      <MovieDetails
         isOpen={isOpen}
         closeModal={() => setIsOpen(false)}
-        car={movie}
+        movie={movie}
       />
     </div>
   );
 };
 
-export default CarCard;
+export default MovieCard;
