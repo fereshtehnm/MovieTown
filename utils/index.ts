@@ -13,7 +13,6 @@ export async function getMovies(page: number) {
   );
 
   const result = await response.json();
-  console.log(result);
   
   return result.data;
 }

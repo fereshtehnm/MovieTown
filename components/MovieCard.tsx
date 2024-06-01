@@ -5,50 +5,41 @@ import Image from "next/image";
 import { MovieProps } from "@/types";
 import CustomButton from "./CustomButton";
 import MovieDetails from "./MovieDetails";
+import Imdb from "./Layouts/Imdb";
 
 interface MovieCardProps {
   movie: MovieProps;
 }
+
 const MovieCard = ({ movie }: MovieCardProps) => {
-  const { title, poster, year } = movie;
+  const { title, poster, year, country, imdb_rating, genres, images } = movie;
+
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="car-card group">
-      <div className="car-card__content">
-        <h2 className="car-card__content-title">
-          {movie.title}
+    <div className="card group">
+      <div className="card__content">
+        <h2 className="card__content-title">
+          {title}
         </h2>
+        <Imdb imdb_rating={imdb_rating} />
       </div>
-      <p className="flex mt-6 text-[32px] font-extrabold">
-        <span className="self-start text-[14px] font-semibold">$</span>
-        <span className="self-end text-[14px] font-medium">/day</span>
-      </p>
-
-      <div className="relative w-full h-40 my-3 object-contain">
+  
+      <div className=" card__image">
         <Image
-          src="/steering-wheel.svg"
+          src={poster}
           fill
-          alt="car model"
+          alt={`${title} poster`}
           priority
           className="object-contain"
         />
       </div>
 
       <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray">
-          <div className="flex flex-col justify-center items-center gap-2">
-            <Image
-              src="/steering-wheel.svg"
-              width={20}
-              height={20}
-              alt="steering wheel"
-            />
-          </div>
-
-          <div className="car-card__btn-container">
+        <div className="flex invisible group-hover:visible w-full justify-between text-gray">
+          <div className="card__btn-container">
             <CustomButton
               title="view more"
-              containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
+              containerStyles="w-full py-[16px] rounded-full bg-red-600"
               textStyles="text-white text-[14px] leading-[17px] font-bold"
               rightIcon="/right-arrow.svg"
               handleClick={() => setIsOpen(true)}
@@ -56,11 +47,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           </div>
         </div>
       </div>
-      <MovieDetails
-        isOpen={isOpen}
-        closeModal={() => setIsOpen(false)}
-        movie={movie}
-      />
+   
     </div>
   );
 };

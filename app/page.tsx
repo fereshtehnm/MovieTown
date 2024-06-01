@@ -4,6 +4,7 @@ import { getMovies } from "@/utils";
 
 export default async function Home() {
   const movies = await getMovies(1);
+  
 
   const isEmpty = !Array.isArray(movies) || movies.length < 1 || !movies;
 
@@ -13,7 +14,7 @@ export default async function Home() {
 
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold"> Catalogue</h1>
+          <h1 className="text-4xl font-extrabold">Catalogue</h1>
           <p>Explore the movies here!</p>
         </div>
         <div className="home__filters">
@@ -27,7 +28,13 @@ export default async function Home() {
           <section>
             <div className="home__cars-wrapper">
               {movies.map((movie) => (
-                <MovieCard key={movie.country} movie={movie} />
+                <MovieCard
+                  key={movie.id} // Use movie.id for unique key
+                  movie={{
+                    ...movie,
+                    mainImage: movie.images[0], // Set mainImage property with first image
+                  }}
+                />
               ))}
             </div>
           </section>

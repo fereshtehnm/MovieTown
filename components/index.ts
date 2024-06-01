@@ -7,6 +7,7 @@ import CustomFilter from "./CustomFilter";
 import SearchManufacturer from "./SearchManufacturer";
 import MovieCard from "./MovieCard";
 import MovieDetails from "./MovieDetails";
+import Imdb from "./Layouts/Imdb";
 export {
   Hero,
   Navbar,
@@ -16,5 +17,6 @@ export {
   CustomFilter,
   SearchManufacturer,
   MovieCard,
-  MovieDetails
+  MovieDetails,
+  Imdb
 };
