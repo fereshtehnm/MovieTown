@@ -4,10 +4,10 @@ import Footer from "./Footer";
 import Button from "./CustomButton";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomFilter";
-import SearchManufacturer from "./SearchManufacturer";
 import MovieCard from "./MovieCard";
 import MovieDetails from "./MovieDetails";
 import Imdb from "./Layouts/Imdb";
+import PaginationControlled from "./Layouts/PaginationControlled";
 export {
   Hero,
   Navbar,
@@ -15,8 +15,8 @@ export {
   Button,
   SearchBar,
   CustomFilter,
-  SearchManufacturer,
   MovieCard,
   MovieDetails,
-  Imdb
+  Imdb,
+  PaginationControlled
 };
