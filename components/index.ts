@@ -8,6 +8,7 @@ import MovieCard from "./MovieCard";
 import MovieDetails from "./MovieDetails";
 import Imdb from "./Layouts/Imdb";
 import PaginationControlled from "./Layouts/PaginationControlled";
+import Loader from "./Layouts/Loader";
 export {
   Hero,
   Navbar,
@@ -18,5 +19,6 @@ export {
   MovieCard,
   MovieDetails,
   Imdb,
-  PaginationControlled
+  PaginationControlled,
+  Loader
 };

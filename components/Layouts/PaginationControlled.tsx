@@ -1,4 +1,3 @@
-import Typography from "@mui/material/Typography";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
@@ -13,11 +12,11 @@ export default function PaginationControlled(props: PaginationProps) {
 
   return (
     <Stack spacing={2}>
-      <Typography>Page: {currentPage}</Typography>
       <Pagination
         count={pageCount}
         page={currentPage}
         onChange={onPageChange}
+        color="warning" 
       />
     </Stack>
   );

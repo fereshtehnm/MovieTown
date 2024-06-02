@@ -8,6 +8,7 @@ import {
   SearchBar,
   MovieCard,
   PaginationControlled,
+  Loader
 } from "@/components";
 import { getMovies } from "@/utils";
 
@@ -50,19 +51,8 @@ export default function Home() {
       <Hero />
 
       <div className="mt-12 padding-x padding-y max-width" id="discover">
-        <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold">Catalogue</h1>
-          <p>Explore the movies here!</p>
-        </div>
-        <div className="home__filters">
-          <SearchBar />
-          <div className="home__filter-container">
-            <CustomFilter title="genre" />
-          </div>
-        </div>
-
         {isLoading ? (
-          <div className="home__loading-container">Loading...</div>
+          <Loader />
         ) : error ? (
           <div className="home__error-container">
             <h2 className="text-black text-xl font-bold">Oops! {error}</h2>
@@ -83,11 +73,13 @@ export default function Home() {
             <h2 className="text-black text-xl font-bold">oops! no data!</h2>
           </div>
         )}
-        <PaginationControlled
-          pageCount={totalPages}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
+        <div className=" flex justify-center py-8">
+          <PaginationControlled
+            pageCount={totalPages}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
     </main>
   );
