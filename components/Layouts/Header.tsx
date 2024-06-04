@@ -6,7 +6,7 @@ function Header() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="flex flex-row justify-between p-1 border-b-2 bg-gray-900">
+    <header className="flex flex-row justify-between p-1 border-b-2 bg-gray-900 -mb-[1px]">
       <div className="px-2">
         <Image
           src="/icon.png"

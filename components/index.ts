@@ -1,6 +1,6 @@
 import Hero from "./Hero";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Footer from "./Layouts/Footer";
 import Button from "./CustomButton";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomFilter";

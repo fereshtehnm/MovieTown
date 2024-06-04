@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <div className="hero">
-      <div className="flex-1 pt-36 padding-x">
+      <div className="hero__text_container">
         <h1 className="hero__title">
           Find every movie here!
         </h1>
@@ -31,10 +31,13 @@ const Hero = () => {
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
-          <Image src="/movie-hero2.png" alt="hero" fill className="object-contain" />
+          <Image src="/movie-hero1.png" alt="hero" fill className="object-contain" />
         </div>
 
         <div className="hero__image-overlay" />
+
+        {/* add overlay for mobile too */}
+
       </div>
     </div>
   );
