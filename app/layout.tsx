@@ -1,7 +1,6 @@
 import "./globals.css";
 
-import { Navbar, Footer } from "@/components";
-import Header from "@/components/Layouts/Header";
+import { Header, Footer } from "@/components";
 export const metadata = {
   title: "Movie Town",
   description: "Discover world's best movies",

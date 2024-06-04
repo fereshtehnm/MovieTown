@@ -1,17 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import {
-  Hero,
+  CustomFilter,
   MovieCard,
+  PaginationControlled,
   Loader
 } from "@/components";
 import { getMovies } from "@/utils";
 
 export default function Home() {
+  const [currentPage, setCurrentPage] = useState(1);
   const [movies, setMovies] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -20,8 +21,9 @@ export default function Home() {
       setIsLoading(true);
       setError(""); // Reset error state on each fetch
       try {
-        const fetchedData = await getMovies(1);
+        const fetchedData = await getMovies(currentPage);
         setMovies(fetchedData.data);
+        setTotalPages(Number(fetchedData.metadata.page_count));
         setIsLoading(false);
         console.log(movies);
       } catch (error) {
@@ -30,13 +32,19 @@ export default function Home() {
     };
 
     fetchData();
-  }, []); // Re-run useEffect on currentPage change
+  }, [currentPage]); // Re-run useEffect on currentPage change
+
+  const handlePageChange = (
+    event: React.ChangeEvent<unknown>,
+    newPage: number
+  ) => {
+    setCurrentPage(newPage);
+  };
 
   const isEmpty = !movies.length || !movies;
 
   return (
     <main className="overflow-hidden">
-      <Hero />
 
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         {isLoading ? (
@@ -54,9 +62,6 @@ export default function Home() {
                   movie={movie}
                 />
               ))}
-              <div className="bg-red-800">
-                <Link href="/movie">See More!</Link>
-              </div>
             </div>
           </section>
         ) : (
@@ -64,6 +69,13 @@ export default function Home() {
             <h2 className="text-black text-xl font-bold">oops! no data!</h2>
           </div>
         )}
+        <div className=" flex justify-center py-8">
+          <PaginationControlled
+            pageCount={totalPages}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
     </main>
   );
