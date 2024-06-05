@@ -47,16 +47,14 @@ export default function Home() {
           </div>
         ) : !isEmpty ? (
           <section>
-            <div className="home__cars-wrapper">
+            <div className="home__wrapper">
               {movies.map((movie) => (
                 <MovieCard
                   key={movie.id} // Use movie.id for unique key
                   movie={movie}
                 />
               ))}
-              <div className="bg-red-800">
-                <Link href="/movie">See More!</Link>
-              </div>
+             
             </div>
           </section>
         ) : (

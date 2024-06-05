@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { MovieProps } from "@/types";
 import CustomButton from "./CustomButton";
-import MovieDetails from "./MovieDetails";
 import Imdb from "./Layouts/Imdb";
 
 interface MovieCardProps {

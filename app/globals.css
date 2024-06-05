@@ -11,6 +11,24 @@
   font-family: "Manrope", sans-serif;
 }
 
+.header__top {
+  @apply flex flex-row justify-between p-1 border-b-2 bg-gray-900 -mb-[1px] pl-2;
+}
+
+.header-nav__mobile {
+  @apply sm:hidden flex flex-col items-end gap-1 font-semibold bg-yellow-400;
+}
+
+.header-nav__item{
+  @apply text-white hover:text-gray-500;
+}
+
+.header-nav__toggle {
+  @apply sm:hidden font-bold text-lg text-white hover:text-gray-500;
+}
+.header-nav__xl{
+  @apply hidden sm:flex justify-between items-center gap-4 px-2 font-semibold justify-self-end;
+}
 /* START: General styles */
 .max-width {
   @apply max-w-[1440px] mx-auto;
@@ -50,7 +68,7 @@
 }
 
 .hero__subtitle {
-  @apply text-[27px] text-black-100 font-light ;
+  @apply text-[27px] text-black font-light ;
 }
 
 .hero__image-container {
@@ -69,7 +87,7 @@
 /* START: Home styles */
 
 .home__text-container {
-  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-black;
 }
 
 .home__filters {
@@ -80,7 +98,7 @@
   @apply flex justify-start flex-wrap items-center gap-2;
 }
 
-.home__cars-wrapper {
+.home__wrapper {
   @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
 }
 
@@ -89,9 +107,9 @@
 }
 /* END: Home styles */
 
-/* START: Car Card styles */
+/* START: Card styles */
 .card {
-  @apply flex flex-col justify-center items-start text-black-100 bg-slate-300 hover:bg-slate-200 hover:shadow-md rounded-3xl;
+  @apply flex flex-col justify-center items-start text-black bg-slate-300 hover:bg-slate-200 hover:shadow-md rounded-3xl;
 }
 
 .card__content {
@@ -111,19 +129,6 @@
 }
 /* END: Card styles */
 
-/* START: Car Details styles */
-.car-details__dialog-panel {
-  @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5;
-}
-
-.car-details__close-btn {
-  @apply absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full;
-}
-
-.car-details__main-image {
-  @apply relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg;
-}
-/* END: Car Details styles */
 
 /* START: Custom Filter styles */
 .custom-filter__btn {
@@ -137,7 +142,7 @@
 
 /* START: Footer styles */
 .footer {
-  @apply flex flex-col text-black-100  mt-5 border-t border-gray-100;
+  @apply flex flex-col text-black  mt-5 border-t border-gray-100;
 }
 
 .footer__links-container {
@@ -175,7 +180,7 @@
 }
 
 .searchbar__input {
-  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 bg-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
 }
 /* END: searchbar styles */
 
@@ -185,7 +190,7 @@
 }
 
 .search-manufacturer__input {
-  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-white outline-none cursor-pointer text-sm;
 }
 
 .search-manufacturer__options {

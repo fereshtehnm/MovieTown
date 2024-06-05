@@ -5,7 +5,6 @@ import Button from "./CustomButton";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomFilter";
 import MovieCard from "./MovieCard";
-import MovieDetails from "./MovieDetails";
 import Imdb from "./Layouts/Imdb";
 import PaginationControlled from "./Layouts/PaginationControlled";
 import Loader from "./Layouts/Loader";
@@ -17,7 +16,6 @@ export {
   SearchBar,
   CustomFilter,
   MovieCard,
-  MovieDetails,
   Imdb,
   PaginationControlled,
   Loader
