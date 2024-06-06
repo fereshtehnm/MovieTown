@@ -4,12 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* convert to farsi rtl
+body {
+  direction: rtl;
+  text-align: right;
+} */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
+
+/* START: Header styles */
 
 .header__top {
   @apply flex flex-row justify-between p-1 border-b-2 bg-gray-900 -mb-[1px] pl-2;
@@ -29,6 +37,41 @@
 .header-nav__xl{
   @apply hidden sm:flex justify-between items-center gap-4 px-2 font-semibold justify-self-end;
 }
+/* END: Header styles */
+
+/* START: Footer styles */
+.footer {
+  @apply flex flex-col text-black  mt-5 border-t border-gray-100;
+}
+ 
+.footer__links-container {
+  @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
+}
+
+.footer__rights {
+  @apply flex flex-col justify-start items-start gap-6;
+}
+
+.footer__text {
+  @apply text-base text-gray-700;
+}
+
+.footer__links {
+  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+}
+
+.footer__link {
+  @apply flex flex-col gap-6 text-base min-w-[170px];
+}
+
+.footer__copyrights {
+  @apply flex justify-between items-center flex-wrap text-sm mt-6 border-t border-gray-100 sm:px-16 px-6 py-2;
+}
+
+.footer__copyrights-link {
+  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+}
+/* END: Footer styles */
 /* START: General styles */
 .max-width {
   @apply max-w-[1440px] mx-auto;
@@ -140,35 +183,6 @@
 }
 /* END: Custom Filter styles */
 
-/* START: Footer styles */
-.footer {
-  @apply flex flex-col text-black  mt-5 border-t border-gray-100;
-}
-
-.footer__links-container {
-  @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
-}
-
-.footer__rights {
-  @apply flex flex-col justify-start items-start gap-6;
-}
-
-.footer__links {
-  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
-}
-
-.footer__link {
-  @apply flex flex-col gap-6 text-base min-w-[170px];
-}
-
-.footer__copyrights {
-  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
-}
-
-.footer__copyrights-link {
-  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
-}
-/* END: Footer styles */
 
 /* START: searchbar styles */
 .searchbar {

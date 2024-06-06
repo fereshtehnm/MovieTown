@@ -13,6 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+{/* <html lang="fa">
+    <meta charSet="utf-8" /> */}
+
       <body className="relative">
         <Header />
         {children}
