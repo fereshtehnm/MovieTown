@@ -23,7 +23,7 @@ const Hero = () => {
         <Link href="/movie">
           <CustomButton
             title="Explore more"
-            containerStyles="bg-red-700 text-white rounded-full mt-10"
+            containerStyles="bg-dark-red text-white rounded-full mt-10"
             handleClick={handleScroll}
           />
         </Link>

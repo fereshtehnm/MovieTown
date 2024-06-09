@@ -16,13 +16,14 @@ const MovieCard = ({ movie }: MovieCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="card group">
-      <div className="card__content">
-        <h2 className="card__content-title">
-          {title}
-        </h2>
+      <div className="card__header">
+        <div className=" basis-5/6">
+          <h2 className="card__content-title">{title}</h2>
+        </div>
+
         <Imdb imdb_rating={imdb_rating} />
       </div>
-  
+
       <div className=" card__image">
         <Image
           src={poster}
@@ -46,7 +47,6 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           </div>
         </div>
       </div>
-   
     </div>
   );
 };

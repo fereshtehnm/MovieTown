@@ -152,11 +152,11 @@ body {
 
 /* START: Card styles */
 .card {
-  @apply flex flex-col justify-center items-start text-black bg-slate-300 hover:bg-slate-200 hover:shadow-md rounded-3xl;
+  @apply text-black bg-slate-300 hover:bg-slate-200 hover:shadow-lg hover:shadow-red-950 rounded-3xl;
 }
 
-.card__content {
-  @apply w-full flex justify-between items-start gap-1 px-4 pt-6 pb-2;
+.card__header {
+  @apply w-full flex flex-row justify-between items-start px-4 pt-6 pb-2;
 }
 
 .card__content-title {
@@ -164,11 +164,14 @@ body {
 }
 
 .card__image {
-  @apply relative w-full h-64 my-1 object-contain;
+  @apply relative w-full h-96 object-contain;
 }
 
 .card__btn-container {
   @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+.imdb-rating__value {
+  @apply text-[14px] text-gray-800 font-extrabold;
 }
 /* END: Card styles */
 

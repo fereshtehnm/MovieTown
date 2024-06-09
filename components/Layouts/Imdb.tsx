@@ -6,9 +6,13 @@ interface ImdbProps {
 
 const Imdb = ({ imdb_rating }: ImdbProps) => {
   return (
-    <div className="imdb-rating">
-      <span className="imdb-rating__value">{imdb_rating}</span>
-      <Image src="/imdb.png" width={30} height={30} alt="imdb" />
+    <div className=" flex-col items-center justify-center w-8">
+      <div className="flex justify-center">
+        <span className="imdb-rating__value">{imdb_rating}</span>
+      </div>
+      <div>
+        <Image src="/imdb.png" width={32} height={25} alt="imdb" />
+      </div>
     </div>
   );
 };
