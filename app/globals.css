@@ -100,18 +100,19 @@ body {
 
 /* START: Hero styles */
 .hero {
-  @apply flex xl:flex-row flex-col  relative z-0 max-w-full;
+  @apply flex xl:flex-row flex-col relative z-0 max-w-full;
 }
 
 .hero__text_container {
   @apply flex-1 pt-36 padding-x;
 }
+
 .hero__title {
-  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
+  @apply 2xl:text-[72px] sm:text-[48px] text-[40px] font-extrabold; /* Adjust font sizes for smaller screens */
 }
 
 .hero__subtitle {
-  @apply text-[27px] text-black font-light ;
+  @apply text-[20px] text-black font-light; /* Adjust font size for smaller screens */
 }
 
 .hero__image-container {
@@ -119,12 +120,13 @@ body {
 }
 
 .hero__image {
-  @apply relative xl:w-full w-[90%] xl:h-full h-[590px] z-0;
+  @apply relative xl:w-full w-full xl:h-full h-auto; /* Set height to auto for responsive behavior */
 }
 
 .hero__image-overlay {
-  @apply absolute  bg-curves bg-repeat-round -z-10 w-2/3 -top-16 xl:h-screen overflow-hidden;
+  @apply absolute bg-curves bg-repeat-round -z-10 w-full h-full overflow-hidden; /* Set width and height to full screen for mobile */
 }
+
 /* END: Hero styles */
 
 /* START: Home styles */

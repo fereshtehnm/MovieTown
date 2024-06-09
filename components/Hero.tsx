@@ -17,7 +17,6 @@ const Hero = () => {
     <div className="hero">
       <div className="hero__text_container">
         <h1 className="hero__title">Find every movie here!</h1>
-
         <p className="hero__subtitle">all about cinema.</p>
 
         <Link href="/movie">
@@ -39,8 +38,6 @@ const Hero = () => {
         </div>
 
         <div className="hero__image-overlay" />
-
-        {/* add overlay for mobile too */}
       </div>
     </div>
   );
