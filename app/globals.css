@@ -24,7 +24,7 @@ body {
 }
 
 .header-nav__mobile {
-  @apply sm:hidden flex flex-col items-end gap-1 font-semibold bg-yellow-400;
+  @apply sm:hidden flex flex-col items-end gap-1 font-semibold;
 }
 
 .header-nav__item{

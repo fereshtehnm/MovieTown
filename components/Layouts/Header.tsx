@@ -1,65 +1,70 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
 
-function Header() {
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
     <header className="header__top">
-      <Image
-        src="/icon.png"
-        alt="logo"
-        width={50}
-        height={50}
-        className="object-contain"
-      />
+      <div className="">
+        <Image
+          src="/icon.png"
+          alt="logo"
+          width={50}
+          height={50}
+          className="object-contain"
+        />
+      </div>
 
-      <nav className="header-nav__xl">
-        <a href="#" className="header-nav__item">
+      <nav className="header-nav__xl"> {/* Main navigation */}
+        <Link href="./" className="header-nav__item">
           Home
-        </a>
-        <a href="#" className="header-nav__item">
+        </Link>
+        <Link href="./about" className="header-nav__item">
           About
-        </a>
-        <a href="#" className="header-nav__item">
-          Contact
-        </a>
+        </Link>
+        <Link href="./contact" className="header-nav__item">
+          Contact Us
+        </Link>
       </nav>
-      {/* mobile nav */}
-      <nav className="header-nav__mobile">
+
+      <nav className="header-nav__mobile"> {/* Mobile navigation */}
         <button
           onClick={() => setShowMenu(!showMenu)}
           className="header-nav__toggle"
         >
           {showMenu ? (
-            "Menu"
+            "Close Menu"
           ) : (
             <Image
               src="/menu.png"
-              alt="logo"
+              alt="menu"
               width={30}
               height={28}
               className="object-contain py-2"
             />
           )}
         </button>
+
         {showMenu && (
           <>
-            <a href="#" className="header-nav__item">
+            <Link href="./" className="header-nav__item">
               Home
-            </a>
-            <a href="#" className="header-nav__item">
+            </Link>
+            <Link href="./about" className="header-nav__item">
               About
-            </a>
-            <a href="#" className="header-nav__item">
+            </Link>
+            <Link href="./contact" className="header-nav__item">
               Contact
-            </a>
+            </Link>
           </>
         )}
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

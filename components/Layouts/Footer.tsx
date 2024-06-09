@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { footerLinks } from "@/constants";
 
-
 const Footer = () => (
   <footer className='footer'>
     <div className='footer__links-container'>
