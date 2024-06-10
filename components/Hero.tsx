@@ -5,13 +5,7 @@ import Link from "next/link";
 import CustomButton from "./CustomButton";
 
 const Hero = () => {
-  const handleScroll = () => {
-    const nextSection = document.getElementById("discover");
 
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <div className="hero">
@@ -23,7 +17,6 @@ const Hero = () => {
           <CustomButton
             title="Explore more"
             containerStyles="bg-dark-red text-white rounded-full mt-10"
-            handleClick={handleScroll}
           />
         </Link>
       </div>
