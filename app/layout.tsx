@@ -1,9 +1,13 @@
 import "./globals.css";
 
 import { Header, Footer } from "@/components";
+
 export const metadata = {
-  title: "Movie Town",
-  description: "Discover world's best movies",
+  title: {
+    default: "Movie Town",
+    template: '%s - Movie Town'
+  },
+  description: "Explore movies here..."
 };
 
 export default function RootLayout({

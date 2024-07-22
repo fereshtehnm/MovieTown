@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Hero, MovieCard, Loader, PaginationControlled } from "@/components";
 import { getMovies } from "@/utils";
 
+export const metadata = {
+  title: "movies",
+  description: "explore movies from around the world!",
+};
+
 export default async function Home(context: any) {
   const fetchedData = await getMovies(parseInt(context.searchParams.page) || 1);
   const movies = fetchedData.data;

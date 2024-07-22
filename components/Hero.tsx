@@ -1,12 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import CustomButton from "./CustomButton";
 
 const Hero = () => {
-
-
   return (
     <div className="hero">
       <div className="hero__text_container">
@@ -16,11 +12,11 @@ const Hero = () => {
         <Link href="/movie">
           <CustomButton
             title="Explore more"
-            containerStyles="bg-dark-red text-white rounded-full mt-10"
+            containerStyles="hero__button"
           />
         </Link>
       </div>
-      <div className="hero__image-container">
+      <div className="hero__image_container">
         <div className="hero__image">
           <Image
             src="/movie-hero1.png"
@@ -30,7 +26,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="hero__image-overlay" />
+        <div className="hero__image_overlay" />
       </div>
     </div>
   );
