@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Hero, MovieCard, Loader } from "@/components";
+import { Hero, MovieCard } from "@/components";
+import { Loader } from "@/components/Layouts";
 import { getMovies } from "@/utils";
 
 export default async function Movie() {

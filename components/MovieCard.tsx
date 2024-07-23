@@ -11,7 +11,8 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ movie }: MovieCardProps) => {
-  const { title, poster, year, country, imdb_rating, genres, images } = movie;
+  const { id, title, poster, year, country, imdb_rating, genres, images } =
+    movie;
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -38,11 +39,10 @@ const MovieCard = ({ movie }: MovieCardProps) => {
         <div className="flex invisible group-hover:visible w-full justify-between text-gray">
           <div className="card__btn-container">
             <CustomButton
+              address={`/movie/${id}`}
               title="view more"
               containerStyles="w-full py-[16px] rounded-full bg-red-600"
               textStyles="text-white text-[14px] leading-[17px] font-bold"
-              rightIcon="/right-arrow.svg"
-              handleClick={() => setIsOpen(true)}
             />
           </div>
         </div>

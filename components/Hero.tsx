@@ -9,12 +9,11 @@ const Hero = () => {
         <h1 className="hero__title">Find every movie here!</h1>
         <p className="hero__subtitle">all about cinema.</p>
 
-        <Link href="/movie">
-          <CustomButton
-            title="Explore more"
-            containerStyles="hero__button"
-          />
-        </Link>
+        <CustomButton
+          title="Explore more"
+          containerStyles="hero__button"
+          address="movie"
+        />
       </div>
       <div className="hero__image_container">
         <div className="hero__image">

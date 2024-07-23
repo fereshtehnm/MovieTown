@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Hero, MovieCard, Loader, PaginationControlled } from "@/components";
+import { Hero, MovieCard } from "@/components";
+import { Loader, PaginationControlled } from "@/components/Layouts";
 import { getMovies } from "@/utils";
 
 export const metadata = {

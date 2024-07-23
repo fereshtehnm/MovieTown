@@ -1,16 +1,15 @@
-
 import { CustomButtonProps } from "@/types";
+import Link from "next/link";
 
 const CustomButton = ({
   containerStyles,
   textStyles,
   title,
+  address,
 }: CustomButtonProps) => (
-  <button
-    className={`custom-btn ${containerStyles}`}
-  >
+  <Link href={address} className={`custom-btn ${containerStyles}`}>
     <span className={`flex-1 ${textStyles}`}>{title}</span>
-  </button>
+  </Link>
 );
 
 export default CustomButton;

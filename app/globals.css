@@ -128,7 +128,7 @@ body {
 }
 
 .hero__button {
-  @apply bg-dark-red text-white rounded-full mt-10;
+  @apply bg-dark-red text-white rounded-full mt-10 w-40;
 }
 
 /* END: Hero styles */
