@@ -12,7 +12,9 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        "dark-red": "#c72c2c",
+        "dark-red": "#B31312",
+        "light-red": "#e92928",
+
       },
       backgroundImage: {
         'pattern': "url('/pattern.png')",

@@ -40,7 +40,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
             <CustomButton
               address={`/movie/${id}`}
               title="view more"
-              containerStyles="w-full py-[16px] rounded-full bg-red-600"
+              containerStyles="w-full py-[16px] rounded-full bg-light-red"
               textStyles="text-white text-[14px] leading-[17px] font-bold"
             />
           </div>
