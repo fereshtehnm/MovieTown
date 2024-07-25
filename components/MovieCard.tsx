@@ -14,7 +14,6 @@ const MovieCard = ({ movie }: MovieCardProps) => {
   const { id, title, poster, year, country, imdb_rating, genres, images } =
     movie;
 
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="card group">
       <div className="card__header">

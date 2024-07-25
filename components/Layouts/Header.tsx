@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className="header__top">
-      <div className="">
+      <Link href="/" className="">
         <Image
           src="/icon.png"
           alt="logo"
@@ -17,21 +17,24 @@ const Header = () => {
           height={50}
           className="object-contain"
         />
-      </div>
+      </Link>
 
-      <nav className="header-nav__xl"> {/* Main navigation */}
-        <Link href="./" className="header-nav__item">
-          Home
+      <nav className="header-nav__xl">
+        {/* Main navigation */}
+        <Link href="/movie" className="header-nav__item">
+          Movies
         </Link>
-        <Link href="./about" className="header-nav__item">
+        <Link href="/about" className="header-nav__item">
           About
         </Link>
-        <Link href="./contact" className="header-nav__item">
+        <Link href="/contact" className="header-nav__item">
           Contact Us
         </Link>
       </nav>
 
-      <nav className="header-nav__mobile"> {/* Mobile navigation */}
+      <nav className="header-nav__mobile">
+        {" "}
+        {/* Mobile navigation */}
         <button
           onClick={() => setShowMenu(!showMenu)}
           className="header-nav__toggle"
@@ -48,16 +51,15 @@ const Header = () => {
             />
           )}
         </button>
-
         {showMenu && (
           <>
-            <Link href="./" className="header-nav__item">
-              Home
+            <Link href="/movie" className="header-nav__item">
+              Movies
             </Link>
-            <Link href="./about" className="header-nav__item">
+            <Link href="/about" className="header-nav__item">
               About
             </Link>
-            <Link href="./contact" className="header-nav__item">
+            <Link href="/contact" className="header-nav__item">
               Contact
             </Link>
           </>
