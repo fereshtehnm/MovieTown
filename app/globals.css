@@ -37,6 +37,12 @@ body {
 .header-nav__xl{
   @apply hidden sm:flex justify-between items-center gap-4 px-2 font-semibold justify-self-end;
 }
+.header-active_link {
+  @apply font-extrabold text-red-500 border-b-2 border-dark-red;
+}
+.header-inactive_link {
+  @apply bg-inherit text-white hover:text-gray-500;
+}
 /* END: Header styles */
 
 /* START: Footer styles */
@@ -128,7 +134,7 @@ body {
 }
 
 .hero__button {
-  @apply bg-dark-red text-white rounded-full mt-10 w-40;
+  @apply bg-dark-red text-white rounded-full mt-10 mb-24;
 }
 
 /* END: Hero styles */
@@ -156,74 +162,7 @@ body {
 }
 /* END: Home styles */
 
-/* START: Card styles */
-.card {
-  @apply text-white bg-black hover:bg-slate-400 hover:shadow-lg hover:shadow-red-950 rounded-3xl;
-}
-
-.card__header {
-  @apply w-full flex flex-row justify-between items-start px-4 pt-6 pb-2;
-}
-
-.card__content-title {
-  @apply text-[20px] leading-[26px] font-bold capitalize;
-}
-
-.card__image {
-  @apply relative w-full h-80 object-contain;
-}
-
-.card__btn-container {
-  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
-}
-.imdb-rating__value {
-  @apply text-[14px] text-gray-700 font-extrabold;
-}
-/* END: Card styles */
-
-
-/* START: Custom Filter styles */
-.custom-filter__btn {
-  @apply relative w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
-}
-
-.custom-filter__options {
-  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
-}
-/* END: Custom Filter styles */
-
-
-/* START: searchbar styles */
-.searchbar {
-  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
-}
-
-.searchbar__item {
-  @apply flex-1 max-sm:w-full flex justify-start items-center relative;
-}
-
-.searchbar__input {
-  @apply w-full h-[48px] pl-12 p-4 bg-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
-}
-/* END: searchbar styles */
-
-/* START: search manufacturer styles */
-.search-manufacturer {
-  @apply flex-1 max-sm:w-full flex justify-start items-center;
-}
-
-.search-manufacturer__input {
-  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-white outline-none cursor-pointer text-sm;
-}
-
-.search-manufacturer__options {
-  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
-}
-
-.search-manufacturer__option {
-  @apply cursor-default select-none py-2 pl-10 pr-4;
-}
-/* END: search manufacturer styles */
+/* START:not found error page */
 
 .not-found-container {
   @apply h-screen w-full flex flex-col justify-center items-center bg-black;
@@ -234,8 +173,9 @@ body {
 .not-found{
   @apply bg-dark-red px-2 text-sm rounded rotate-12 absolute;
 }
+/* END:not found error page */
 
-/* START: about us */
+/* START: about us page*/
 .about-us-container {
   @apply sm:flex items-center max-w-screen-xl;
 }
@@ -248,4 +188,31 @@ body {
 .about-us-text {
   @apply my-4 font-bold text-3xl  sm:text-4xl;
 }
-/* END: about us */
+/* END: about us page*/
+
+/* START: Card styles */
+.card {
+  @apply text-black bg-slate-300 hover:bg-slate-200 hover:shadow-lg hover:shadow-red-950 rounded-3xl;
+}
+
+.card__header {
+  @apply w-full flex flex-row justify-between items-start px-4 pt-6 pb-2;
+}
+
+.card__content-title {
+  @apply text-[20px] leading-[26px] font-bold capitalize;
+}
+
+.card__image {
+  @apply relative w-full h-96 object-contain;
+}
+
+.card__btn-container {
+  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+.imdb-rating__value {
+  @apply text-[14px] text-gray-800 font-extrabold;
+}
+/* END: Card styles */
+
+

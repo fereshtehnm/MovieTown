@@ -1,6 +1,6 @@
 import { getMovieId } from "@/utils";
 import { Metadata } from "next";
-import { Movie } from "@/components/Layouts";
+import { Movie } from "@/components/sections";
 
 type Props = { params: { movieId: string } };
 

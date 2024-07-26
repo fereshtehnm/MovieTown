@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { MovieProps } from "@/types";
-import CustomButton from "../CustomButton";
-import Imdb from "./Imdb";
+import { CustomButton } from "../common";
+import Imdb from "../common/Imdb";
 
 interface MovieCardProps {
   movie: MovieProps;

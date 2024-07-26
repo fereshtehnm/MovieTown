@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Hero, MovieCard } from "@/components";
-import { Loader } from "@/components/Layouts";
+import { Hero, MovieCard } from "@/components/sections";
+import { Spinner } from "@/components/common";
 import { getMovies } from "@/utils";
 
 export default async function Movie() {
@@ -17,7 +17,7 @@ export default async function Movie() {
 
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         {!movies ? (
-          <Loader />
+          <Spinner />
         ) : !isEmpty ? (
           <section>
             <div className="home__wrapper">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Hero, MovieCard } from "@/components";
-import { Loader, PaginationControlled } from "@/components/Layouts";
+import { Hero, MovieCard } from "@/components/sections";
+import { Spinner, PaginationControlled } from "@/components/common";
 import { getMovies } from "@/utils";
 
 export const metadata = {
@@ -20,7 +20,7 @@ export default async function Home(context: any) {
     <main className="overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         {!movies ? (
-          <Loader />
+          <Spinner />
         ) : !isEmpty ? (
           <section>
             <div className="home__wrapper">
