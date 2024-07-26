@@ -4,7 +4,7 @@ export interface CustomButtonProps {
   title: string;
   containerStyles?: string;
   textStyles?: string;
-  address: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 export interface SearchManufacturerProps {
   manufacturer: string;

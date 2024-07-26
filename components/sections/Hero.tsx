@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import CustomButton from "../common/CustomButton";
+import Link from "next/link";
+import { CustomButton } from "../common";
 
 const Hero = () => {
   return (
@@ -8,11 +9,13 @@ const Hero = () => {
       <div className="hero__text_container">
         <h1 className="hero__title"> Find every movie here!</h1>
         <p className="hero__subtitle">all about cinema...</p>
-        
-        <CustomButton
-        title="Explore more"
-        containerStyles="hero__button" 
-        />
+        <Link href="/movie" passHref legacyBehavior>
+          <CustomButton
+            title="Explore more"
+            containerStyles="hero__button"
+            textStyles=""
+          />
+        </Link>
       </div>
 
       <div className="hero__image_container">
@@ -26,7 +29,6 @@ const Hero = () => {
         </div>
 
         <div className="hero__image_overlay" />
-
       </div>
     </div>
   );

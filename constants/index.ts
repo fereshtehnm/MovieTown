@@ -1,4 +1,10 @@
-  export const footerLinks = [
+export const navList = [
+  { name: "movies", href: "/movie" },
+  { name: "contact us", href: "/contact" },
+  { name: "about", href: "/about" },
+];
+
+export const footerLinks = [
     {
       title: "About",
       links: [
