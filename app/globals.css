@@ -190,6 +190,36 @@ body {
 }
 /* END: about us page*/
 
+/* START: contact us page*/
+.contact-container__box {
+  @apply bg-white w-full shadow rounded p-8 sm:p-12 -mt-72;
+}
+.contact-p {
+  @apply text-3xl font-bold leading-7 text-center;
+}
+.contact-form__div {
+  @apply md:flex items-center mt-12;
+}
+.contact-form__div-message {
+  @apply w-full flex flex-col mt-8;
+}
+.contact-form__label {
+  @apply font-semibold leading-none;
+}
+.contact-form__input {
+  @apply leading-none text-gray-900 p-3 focus:outline-none focus:border-red-700 mt-4 bg-gray-100 border rounded border-gray-200;
+}
+.contact-form__text {
+  @apply h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-red-700 mt-4 bg-gray-100 border rounded border-gray-200;
+}
+.contact-form__btn-container {
+  @apply flex items-center justify-center w-full;
+}
+.contact-form__btn {
+  @apply mt-9 font-semibold leading-none text-white py-4 px-10 bg-gray-700 rounded hover:bg-gray-600 focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none;
+}
+/* END: contact us page*/
+
 /* START: Card styles */
 .card {
   @apply text-black bg-slate-300 hover:bg-slate-200 hover:shadow-lg hover:shadow-red-950 rounded-3xl;

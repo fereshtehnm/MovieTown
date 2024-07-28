@@ -2,11 +2,11 @@ import Hero from "./Hero";
 import Movie from "./Movie";
 import MovieCard from "./MovieCard";
 import SearchBar from "./SearchBar";
-import SubmitContact from "./SubmitContact";
+import ContactForm from "./ContactForm";
 export {
     Hero,
     Movie,
     MovieCard,
     SearchBar,
-    SubmitContact
+    ContactForm
 }
