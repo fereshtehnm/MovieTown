@@ -26,3 +26,20 @@ export interface MovieProps {
   plot: string;
   awards: string;
 }
+
+export interface Metadata {
+  current_page: string;
+  per_page: number;
+  page_count: number;
+  total_count: number;
+}
+
+export interface ApiResponse {
+  data: MovieProps[];
+  metadata: Metadata;
+}
+
+export interface Genre {
+  id: number;
+  name: string;
+}

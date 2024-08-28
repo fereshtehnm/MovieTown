@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Hero, MovieCard } from "@/components/sections";
 import { Spinner, PaginationControlled } from "@/components/common";
-import { getMovies } from "@/utils";
+import { GETMovies } from "@/api/movie/route";
 
 export const metadata = {
   title: "movies",
@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 export default async function Home(context: any) {
-  const fetchedData = await getMovies(parseInt(context.searchParams.page) || 1);
+  const fetchedData = await GETMovies(parseInt(context.searchParams.page) || 1);
   const movies = fetchedData.data;
   const totalPage = fetchedData.metadata.page_count;
 

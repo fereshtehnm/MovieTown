@@ -1,6 +1,6 @@
-import { getMovieId } from "@/utils";
 import { Metadata } from "next";
 import { Movie } from "@/components/sections";
+import { GETMovieById } from "@/api/movie/route";
 
 type Props = { params: { movieId: string } };
 
@@ -11,11 +11,8 @@ export const generateMetadata = ({ params }: Props): Metadata => {
 };
 
 export default async function movieId({ params }: Props) {
-  const movie = await getMovieId(params.movieId);
-  console.log(movie);
+  const movie = await GETMovieById(params.movieId);
   return (
-    <div>
       <Movie movie={movie} />
-    </div>
   );
 }

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-interface ImdbProps {
-  imdb_rating: string;
-}
+// interface ImdbProps {
+//   imdb_rating: string;
+// }
 
-const Imdb = ({ imdb_rating }: ImdbProps) => {
+const Imdb = ( {imdb_rating}: { imdb_rating : string}) => {
   return (
     <div className=" flex-col items-center justify-center w-8">
       <div className="flex justify-center">

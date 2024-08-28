@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Hero, MovieCard } from "@/components/sections";
 import { Spinner } from "@/components/common";
-import { getMovies } from "@/utils";
-
+import { GETMovies } from "@/api/movie/route";
+import { MovieProps, ApiResponse } from "@/types";
 export default async function Movie() {
-  const fetchedData = await getMovies( 1);
-  const movies = fetchedData.data;
-  const totalPage = fetchedData.metadata.page_count;
-  
+  const fetchedData: ApiResponse = await GETMovies(2); // Use ApiResponse type here
+  const movies: MovieProps[] = fetchedData.data; // Use Movie[] type here
+  const totalPage: number = fetchedData.metadata.page_count;
+
   const isEmpty = !movies.length || !movies;
 
   return (
@@ -21,7 +21,7 @@ export default async function Movie() {
         ) : !isEmpty ? (
           <section>
             <div className="home__wrapper">
-              {movies.map((movie: any) => (
+              {movies.map((movie: MovieProps) => ( // Use Movie type here
                 <MovieCard
                   key={movie.id} // Use movie.id for unique key
                   movie={movie}

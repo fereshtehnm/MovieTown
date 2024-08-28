@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { MovieProps } from "@/types";
-import { CustomButton } from "../common";
 import Imdb from "../common/Imdb";
 
 interface MovieCardProps {
@@ -25,8 +24,8 @@ const Movie = ({ movie }: MovieCardProps) => {
   } = movie;
 
   return (
-    <div className="bg-black text-white min-h-screen p-6">
-      <div className="flex flex-col md:flex-row">
+    <div className="bg-[#34312d] text-white min-h-screen">
+      <div className="flex flex-col md:flex-row p-6">
         <div className="flex flex-col items-center md:items-start md:flex-row md:basis-1/3">
           <Image
             src={poster}
@@ -89,8 +88,7 @@ const Movie = ({ movie }: MovieCardProps) => {
           </div>
         </div>
       </div>
-      <div className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Images</h2>
+      <div className="p-8 mt-6 bg-[#7e7f83]">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {images.map((image, index) => (
             <Image

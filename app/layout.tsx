@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import 'swiper/css';
 import { Header, Footer } from "@/components/layout";
 
 export const metadata = {
@@ -17,9 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-{/* <html lang="fa">
-    <meta charSet="utf-8" /> */}
-
       <body className="relative">
         <Header />
         {children}

@@ -6,11 +6,8 @@ import Link from "next/link";
 import { MovieProps } from "@/types";
 import { CustomButton, Imdb } from "../common";
 
-interface MovieCardProps {
-  movie: MovieProps;
-}
 
-const MovieCard = ({ movie }: MovieCardProps) => {
+const MovieCard = ({ movie }: { movie: MovieProps }) => {
   const { id, title, poster, year, country, imdb_rating, genres, images } =
     movie;
 
@@ -29,19 +26,18 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           src={poster}
           fill
           alt={`${title} poster`}
-          priority
           className="object-contain"
         />
       </div>
 
       <div className="relative flex w-full mt-2">
-        <div className="flex invisible group-hover:visible w-full justify-between text-gray">
+        <div className="card__bottom-container">
           <div className="card__btn-container">
             <Link href={`/movie/${id}`} passHref legacyBehavior>
               <CustomButton
                 title="view more"
-                containerStyles="w-full py-[16px] rounded-full bg-light-red"
-                textStyles="text-white text-[14px] leading-[17px] font-bold"
+                containerStyles="card__btn"
+                textStyles="card__btn-text"
               />
             </Link>
           </div>
