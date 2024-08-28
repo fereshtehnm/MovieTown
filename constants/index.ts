@@ -1,5 +1,6 @@
 export const navList = [
   { name: "movies", href: "/movie" },
+  { name: "genre", href: "/genre" },
   { name: "contact us", href: "/contact" },
   { name: "about", href: "/about" },
 ];

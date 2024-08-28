@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Genre } from "@/types";
 import { GETGenres } from "@/api/genre/route";
 
+
 export default async function page() {
   const genres: Genre[] = await GETGenres();
 
@@ -12,7 +13,7 @@ export default async function page() {
         {genres.map((genre) => (
           <Link
             key={genre.id} 
-            href={`/genres/${genre.id}`} 
+            href={`/genre/${genre.id}`} 
             className="block p-4 bg-gray-800 hover:bg-gray-700 rounded-lg text-center transition duration-200"
           >
             <h2 className="text-xl font-semibold">{genre.name}</h2>
