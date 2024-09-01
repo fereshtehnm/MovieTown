@@ -17,10 +17,14 @@ export default async function Home(context: any) {
 
   const isEmpty = !movies.length || !movies;
 
+  const handleSearchResults = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <main className="overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
-        <SearchBar />
+        <SearchBar onSearchResults={handleSearchResults} />
         {!movies ? (
           <Spinner />
         ) : !isEmpty ? (
@@ -28,7 +32,7 @@ export default async function Home(context: any) {
             <div className="home__wrapper">
               {movies.map((movie: any) => (
                 <MovieCard
-                  key={movie.id} // Use movie.id for unique key
+                  key={movie.id} 
                   movie={movie}
                 />
               ))}
