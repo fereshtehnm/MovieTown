@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Hero, MovieCard } from "@/components/sections";
 import { Spinner, PaginationControlled } from "@/components/common";
 import { GETMovies } from "@/api/movie/route";
+import { SearchBar } from "@/components/common";
 
 export const metadata = {
   title: "movies",
@@ -19,6 +20,7 @@ export default async function Home(context: any) {
   return (
     <main className="overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <SearchBar />
         {!movies ? (
           <Spinner />
         ) : !isEmpty ? (

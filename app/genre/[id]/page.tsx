@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { MovieCard } from "@/components/sections";
 import { PaginationControlled } from "@/components/common";
 import { GETMoviesByGenre } from "@/api/genre/route";
-
+import { cookies } from "next/headers";
 type Props = { params: { id: string } };
 
 export const generateMetadata = ({ params }: Props): Metadata => {
@@ -11,17 +11,30 @@ export const generateMetadata = ({ params }: Props): Metadata => {
   };
 };
 
-export default async function MoviesByGenre({ params, searchParams }: { params: { id: string }, searchParams: { page: string } }) {
-    const fetchedData = await GETMoviesByGenre(
-      parseInt(searchParams.page) || 1,
-      params.id
-    );
-    const movies = fetchedData.data;
-    const totalPage = fetchedData.metadata.page_count;
-  
+export default async function MoviesByGenre({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams: { page: string };
+}) {
+  const fetchedData = await GETMoviesByGenre(
+    parseInt(searchParams.page) || 1,
+    params.id
+  );
+  // Retrieve and parse the genre cookie, find the matching genre name
+  const genreName =
+    JSON.parse(cookies().get("genre")?.value || "[]").find(
+      (g: { id: number; name: string }) => g.id === parseInt(params.id)).name;
+
+  const movies = fetchedData.data;
+  const totalPage = fetchedData.metadata.page_count;
+
   return (
     <main className="overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <h2 className="genre-id__title">{genreName}</h2>
+
         {movies ? (
           <section>
             <div className="home__wrapper">

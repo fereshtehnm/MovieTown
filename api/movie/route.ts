@@ -19,3 +19,13 @@ export async function GETMovieById(movie_id: string) {
 
   return data;
 }
+
+export async function GETMovieBySearch(movie_name: string, page: number) {
+  const data = await fetch(`${baseUrl}/movies?q=${movie_name}&page=${page&&page}`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+
+  return data;
+}
