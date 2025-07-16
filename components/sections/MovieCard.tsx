@@ -33,7 +33,7 @@ const MovieCard = ({ movie }: { movie: MovieProps }) => {
       <div className="relative flex w-full mt-2">
         <div className="card__bottom-container">
           <div className="card__btn-container">
-            <Link href={`/movie/${id}`} passHref legacyBehavior>
+            <Link href={`/movie/${id}`}>
               <CustomButton
                 title="view more"
                 containerStyles="card__btn"

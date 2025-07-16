@@ -11,20 +11,17 @@ export const metadata = {
 };
 
 export default async function Home(context: any) {
-  const fetchedData = await GETMovies(parseInt(context.searchParams.page) || 1);
+  const fetchedData = await GETMovies(parseInt((await context.searchParams).page) || 1);
   const movies = fetchedData.data;
   const totalPage = fetchedData.metadata.page_count;
 
   const isEmpty = !movies.length || !movies;
 
-  const handleSearchResults = (data: any) => {
-    console.log(data);
-  };
 
   return (
     <main className="overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
-        <SearchBar onSearchResults={handleSearchResults} />
+        {/* <SearchBar /> */}
         {!movies ? (
           <Spinner />
         ) : !isEmpty ? (
@@ -46,7 +43,7 @@ export default async function Home(context: any) {
         <div className="flex justify-center padding-x padding-y">
           <PaginationControlled
             pageCount={totalPage}
-            currentPage={parseInt(context.searchParams.page) || 1}
+            currentPage={parseInt((await context.searchParams).page) || 1}
           />
         </div>
       </div>
