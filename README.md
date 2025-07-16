@@ -31,5 +31,5 @@ You can start editing the page by modifying app/page.tsx. The page auto-updates 
 This project uses next/font to automatically optimize and load Inter, a custom Google Font.
 
 🛠️ API
-This project uses the free [MoviesAPI]([https://nextjs.org/](https://moviesapi.ir/)) for movie data, as introduced in the course.
+This project uses the free [MoviesAPI](https://moviesapi.ir/) for movie data, as introduced in the course.
 
