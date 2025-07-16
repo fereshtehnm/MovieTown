@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { GETMovieBySearch } from '@/api/movie/route';
 
-export default function SearchBar({ onSearchResults }: { onSearchResults: (data: any) => void }) {
+export default function SearchBar() {
   const [name, setName] = React.useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +18,6 @@ export default function SearchBar({ onSearchResults }: { onSearchResults: (data:
 
     if (name.trim()) {
       const data = await GETMovieBySearch(name, 1);
-      onSearchResults(data);
     }
   };
 

@@ -3,28 +3,30 @@ import { MovieCard } from "@/components/sections";
 import { PaginationControlled } from "@/components/common";
 import { GETMoviesByGenre } from "@/api/genre/route";
 import { cookies } from "next/headers";
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
-export const generateMetadata = ({ params }: Props): Metadata => {
+export const generateMetadata = async (props: Props): Promise<Metadata> => {
+  const params = await props.params;
   return {
     title: `movie ${params.id}`,
   };
 };
 
-export default async function MoviesByGenre({
-  params,
-  searchParams,
-}: {
-  params: { id: string };
-  searchParams: { page: string };
-}) {
+export default async function MoviesByGenre(
+  props: {
+    params: Promise<{ id: string }>;
+    searchParams: Promise<{ page: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const fetchedData = await GETMoviesByGenre(
     parseInt(searchParams.page) || 1,
     params.id
   );
   // Retrieve and parse the genre cookie, find the matching genre name
   const genreName =
-    JSON.parse(cookies().get("genre")?.value || "[]").find(
+    JSON.parse((await cookies()).get("genre")?.value || "[]").find(
       (g: { id: number; name: string }) => g.id === parseInt(params.id)).name;
 
   const movies = fetchedData.data;
