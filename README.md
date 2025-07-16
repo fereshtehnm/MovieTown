@@ -2,7 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project, built as part of the SokanAcademy Primary Next.js course.
 
-[**Live Demo**](https://movie-town-sigma.vercel.app/)
+[**Live Demo**](https://movie-town-zeta.vercel.app/)
 
 ---
 
