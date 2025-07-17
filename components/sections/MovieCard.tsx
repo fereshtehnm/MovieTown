@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MovieProps } from "@/types";
 import { CustomButton, Imdb } from "../common";
-
 
 const MovieCard = ({ movie }: { movie: MovieProps }) => {
   const { id, title, poster, year, country, imdb_rating, genres, images } =
@@ -25,6 +23,7 @@ const MovieCard = ({ movie }: { movie: MovieProps }) => {
         <Image
           src={poster}
           fill
+          sizes="100vw"
           alt={`${title} poster`}
           className="object-contain"
         />
