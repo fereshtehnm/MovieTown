@@ -9,15 +9,15 @@ const Footer = () => (
       <div className='footer__rights'>
         <Image src='/icon.png' alt='logo' width={118} height={18} className='object-contain' />
         <p className='footer__text'>
-          MovieTown 2024 <br />
+          MovieTown 2025 <br />
           All Rights Reserved &copy;
         </p>
       </div>
 
       <div className="footer__links">
         {footerLinks.map((item) => (
-          <div key={item.title} className="footer__link">
-            <h3 className="font-bold">{item.title}</h3>
+          <div key={item.title} >
+            <h3 className="font-bold text-red py-8">{item.title}</h3>
             <div className="footer__link">
               {item.links.map((link) => (
                 <Link
@@ -35,7 +35,7 @@ const Footer = () => (
     </div>
 
     <div className='footer__copyrights'>
-      <p className="">@2024 MovieTown. All rights reserved</p>
+      <p className="">@2025 MovieTown. All rights reserved</p>
 
       <div className="footer__copyrights-link">
         <Link href="/" className="footer__text">
